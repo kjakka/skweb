@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Click to Love Soumi</title>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Parisienne|Lily+Script+One|Kelly+Slab|Roboto+Slab:700|Berkshire+Swash|Smokum|UnifrakturCook:700|Plaster|Kavoon">
+
+    <style type='text/css'>
+        html, body, #scratchpad1 {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            top: 0; left: 0; margin: 0; padding: 0; cursor: pointer;
+            background-image: -webkit-gradient(linear, 0 100%, 0 0, color-stop(0.1, rgb(223, 223, 223)), color-stop(0.55, rgb(252, 252, 252)));
+            background-image: -webkit-linear-gradient(bottom, rgb(223, 223, 223) 10%, rgb(252, 252, 252) 55%);
+            background-image: -moz-linear-gradient(bottom, rgb(223, 223, 223) 10%, rgb(252, 252, 252) 55%);
+            background-image: -o-linear-gradient(bottom, rgb(223, 223, 223) 10%, rgb(252, 252, 252) 55%);
+            background-image: linear-gradient(bottom, rgb(223, 223, 223) 10%, rgb(252, 252, 252) 55%);
+        }
+        .msg {
+            opacity: 0.1;
+            clear: both;
+            font-family: Verdana, Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            position: absolute;
+            white-space: nowrap;
+            padding: 0 10px;
+        }
+        #cpanel {
+            bottom: 0;
+            position: fixed;
+            height: 20px;
+            width: 100%;
+            background-color: #c8c8c8;
+            padding: 2px 20px;
+            color: #aaa;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 11px;
+            line-height: 20px;
+        }
+        #autospeed {
+            width: 200px;
+            float: left;
+        }
+        .cright {
+            float: right;
+            padding-right: 20px;
+        }
+    </style>
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function() {
+LYS = {
+    rand: function (max) {
+        return Math.floor((Math.random() * max));
+    },
+    colors: ['5a290b', '1c4d0a', '440832', 'ff4900', 'de0056', '006a3d',
+        '202536', '685c29', 'efe000', 'ff3100', '3a01bf', '5081ca'],
+    fonts: ['Parisienne', 'Lily Script One', 'Kelly Slab', 'Roboto Slab',
+        'Berkshire Swash', 'Smokum', 'UnifrakturCook', 'Plaster', 'Kavoon'],
+    msgs: ['Soumi', 'Chomu', 'Princess', 'Sweetheart', 'Soumi',
+        'Cutie Pie', 'My Cupcake', 'Soumi', 'Baby', 'My Angel', 'Soumi'],
+    color: function () {
+        return '#' + LYS.colors[LYS.rand(LYS.colors.length)];
+    },
+    font: function () {
+        return LYS.fonts[LYS.rand(LYS.fonts.length)];
+    },
+    msg: function () {
+        var dil = (LYS.rand(10)%2==1?'\u2661':'\u2665');
+        return dil + ' Love u ' + LYS.msgs[LYS.rand(LYS.msgs.length)];
+    },
+    loveu: function (x, y) {
+        var rn = LYS.rand(10000),
+            pg = $('#scratchpad1');
+
+        var cx = Math.floor(pg.width() / 2),
+            cy = Math.floor(pg.height() / 2);
+
+        var ms = $('<div></div>').addClass('msg');
+
+        ms.css('color', LYS.color())
+            .css('font-family', LYS.font())
+            .text(LYS.msg())
+            .css('font-size', 20 + (rn % 80))
+            .appendTo(pg);
+
+        if (x > cx) ms.css('right', (cx * 2) - x + 'px');
+        else ms.css('left', x + 'px');
+        if (y > cy) ms.css('bottom', (cy * 2) - y + 'px');
+        else ms.css('top', y + 'px');
+
+        ms.fadeTo(1000 + (rn % 1000), 0.9)
+        .fadeOut(10000, function() {
+            $(this).remove();
+        });
+    },
+    autolove: function() {
+        var pg = $('#scratchpad1');
+        LYS.loveu(LYS.rand(pg.width()), LYS.rand(pg.height()), 5000);
+    }
+};
+
+$(function () {
+    $('#scratchpad1').on('mouseup touchstart', function (e) {
+        e.stopPropagation(); e.preventDefault();
+        if (e.type == 'touchstart') {
+            e = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+        }
+        LYS.loveu(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
+    });
+
+    var ahandle = null,
+        autospeed = 2500;
+    $('#autolove').change(function() {
+        if ($(this).is(':checked')) {
+            ahandle = setInterval(LYS.autolove, autospeed);
+        } else {
+            clearInterval(ahandle);
+        }
+    });
+
+});
+});//]]>
+
+</script>
+
+
+</head>
+<body>
+    <div id="scratchpad1">
+        <div id="cpanel">
+            <input type="checkbox" id="autolove"/>
+            <label for="autolove">AUTO</label>
+            <div id="autospeed"></div>
+            <div class="cright">&copy; SowmyaKalyan.com</div>
+        </div>
+    </div>
+</body>
+
+
+</html>
+

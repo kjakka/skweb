@@ -1,0 +1,164 @@
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Oswald|Satisfy' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="./jquery.countdown.js"></script>	
+	<style>
+		body {
+			margin: 0px;
+			width: 100%;
+			height: 100%;
+		}
+		.lowBG {
+			background: url("img/broback.JPG");
+			background-repeat:no-repeat;
+			background-size: cover;
+			background-position:center;
+		}
+		.highBG {
+			background: url("img/IMG_0017.JPG");
+			background-repeat:no-repeat;
+			background-size: cover;
+			background-position:center;
+		}
+		.partyBG {
+			background: url("img/beer.gif");
+			background-repeat:no-repeat;
+			background-size: cover;
+			background-position:center;			
+		}
+
+		.wrapper { display: table; }
+
+		.cell {
+		  display: table-cell;
+		  margin: 0;
+		  padding: 0;
+		  text-align: center;
+		  vertical-align: middle;
+		}
+
+		#holder {
+		  width: 650px;
+		  height: 383px;
+		  margin: auto;
+		  background: url("img/time-placeholder.png") no-repeat;
+		}
+
+		.cntSeparator { display: none; }
+
+		.cntDigit {
+		  margin-top: 148px !important;
+		}
+
+		.cntDigit#cnt_0 { margin-left: 52px; }
+		.cntDigit#cnt_2, .cntDigit#cnt_4, .cntDigit#cnt_6 { margin-left: 7px; }
+
+		.headline {
+			color: #f4f4f4;
+			font-family: Oswald, sans-serif;
+			font-size: 36px;
+			text-shadow: -1px 0 #111111, 0 1px #111111, 1px 0 #111111, 0 -1px #111111;
+			margin-top: -100px;
+		}
+
+		.party { 
+			display: table; 
+			padding: 50px 0 0 100px;
+		}
+
+		.party .lights {
+			color: #232323;
+			font-family: Oswald, sans-serif;
+			font-size: 36px;
+		}
+
+		.wisdom {
+			position: absolute;
+			bottom: 20px;
+			right: 40px;
+			width: 60%;
+			height: 8%;
+		}
+		.quote, .party .status {
+			bottom: 0px;
+			vertical-align: text-bottom;
+			text-align: right;
+			color: #656565;
+			font-family: Satisfy, serif;
+			font-size: 22px;
+			text-shadow: -1px 0 #efefef, 0 1px #efefef, 1px 0 #efefef, 0 -1px #efefef;
+			line-height: 20px;
+		}
+		.quote span {
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			padding-right: 10px;
+		}
+	</style>
+    <script>
+    	function touchDown() {
+			$(".wrapper").show();
+			$(".digits").countdown({
+				image: "img/digits.png",
+				format: "dd:hh:mm:ss",
+				endTime: new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
+			});
+    	}
+
+    	function startParty() {
+    		$(".party").show();
+    	}
+
+		function showQuote() {
+			$.ajax({
+			    url: "http://query.yahooapis.com/v1/public/yql",
+			    // the name of the callback parameter, as specified by the YQL service
+			    jsonp: "callback",
+			    // tell jQuery we're expecting JSONP
+			    dataType: "jsonp",
+			    // tell YQL what we want and that we want JSON
+			    data: {
+			        q: "select * from json where url=\"http://www.iheartquotes.com/api/v1/random?source=medicine+wisdom+technology&format=json&max_characters=200\"",
+			        format: "json"
+			    },
+			    // work with the response
+			    success: function( response ) {
+			        $(".quote").html( response.query.results.json.quote.replace(/--(?![\s\S]*--)/, "<br/><span>--") + "</span>" ); 
+			        // server response
+			    }
+			});
+		}
+
+		$(document).ready(function() {
+			var img = new Image;
+			img.onload = function() {
+				$("body").addClass("highBG");
+				$("body").removeClass("lowBG");
+			};
+			img.src = "img/IMG_0017.JPG";
+			touchDown();
+
+			showQuote();
+			setInterval(showQuote, 60000);		
+		});		
+    </script>
+</head>
+<body class="lowBG" width="100%" height="100%">
+	<div class="wrapper" style="display:none;">
+      <div class="cell">
+        <div id="holder">
+          <div class="digits"></div>
+        </div>
+	    <div class="headline">left for Bhaiya to touchdown! </div>
+      </div>
+    </div>
+    <div class="party" style="display:none;">
+    	<span class="lights">Bhaiya is here!!!</span><br/>
+    	<span class="status">The three musketeers are enjoying a chilled beer...</span>
+    </div>
+    <div class="wisdom">
+    	<div class="quote"></div>
+    </div>
+</body>
+</html>
