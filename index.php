@@ -1,7 +1,3 @@
-<?php
-header("Location: somkal/index.html");
-exit;
-?>
 <!doctype html>
 <html lang="en">
 <head>
