@@ -28,11 +28,13 @@ h5 {
     height: 100vh;
     min-height: 100vh;
 }
+
 .modal-content {
     margin: auto;
     display: block;
-    height: 80vh;
-    max-width: 700px;
+    max-height: 80vh;
+    max-width: 90vw;
+    text-align: center;
 }
 </style>
 
@@ -73,12 +75,12 @@ h5 {
         <a name="about"></a>
         <h2 class="w3-xlarge" style="letter-spacing: 4px">ABOUT</h2>
         <div class="w3-row ">
-            <div class="w3-col m6 w3-center w3-padding-large ">
+            <div class="w3-half w3-center w3-padding-large ">
                 <br>
                 <img src="Images/somkalgrad.png" class="w3-round w3-image w3-opacity w3-hover-opacity-off " alt="Photo of Me " width="200 ">
             </div>
             <!-- Hide this text on small devices -->
-            <div class="w3-col m6 w3-hide-small w3-padding-large ">
+            <div class="w3-half w3-padding-large ">
                 <p class="w3-left-align ">I'm a web designer / developer based in Jersey City, NJ. I have a passion for web design and love to create for web and mobile devices.
                     <br> I’m a recent Information Technology graduate, looking for a Software Designer/Developer position with a focus on web and mobile devices. My previous work experience involved website design updates and content administration using Joomla development. I also had an opportunity to attend conferences at United Nations and capture the updates and events.
                 </p>
@@ -172,8 +174,9 @@ h5 {
             </div>
             <!-- Modal for full size images on click-->
             <div id="modal01 " class="w3-modal w3-black w3-padding-0 " onclick="this.style.display='none' ">
-                <span class="w3-closebtn w3-text-white w3-opacity w3-hover-opacity-off w3-xxlarge
-        w3-container w3-display-topright">×</span>
+                <span class="w3-closebtn w3-text-white w3-opacity w3-hover-opacity-off w3-container w3-display-topright">
+                    <i class="fa fa-times"></i>
+                </span>
                 <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64 ">
                     <img id="img01 " class="w3-image modal-content">
                     <p id="caption "></p>
