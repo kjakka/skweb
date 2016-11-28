@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<title>Sowmya Raj</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Raleway", sans-serif;
+}
+
+.lato {
+    font-family: "Lato";
+}
+
+.wide {
+    letter-spacing: 4px;
+}
+
+.section-full {
+    height: 100vh;
+    min-height: 100vh;
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    height: 80vh;
+    max-width: 700px;
+}
+</style>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <ul class="w3-navbar" id="myNavbar">
+            <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+                <a class="w3-hover-black" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </li>
+            <li class="w3-left-align"><a href="#about">ABOUT</a></li>
+            <li class="w3-hide-small"><a href="#work">WORK</a></li>
+            <li class="w3-hide-small"><a href="#art">ART</a></li>
+        </ul>
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium">
+            <ul class="w3-navbar w3-left-align w3-white">
+                <li><a href="#about" onclick="toggleFunction()">ABOUT</a></li>
+                <li><a href="#work" onclick="toggleFunction()">WORK</a></li>
+                <li><a href="#art" onclick="toggleFunction()">ART</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="w3-panel w3-padding-128 w3-center section-full">
+        <h1 class="wide">Sowmya Raj</h1>
+        <img src="Images/halfAvatar.png" class="w3-circle" style="width:10%" alt="halfAvatar">
+        <div class="w3-padding-10">
+            <h4 class="lato wide">Software Developer, Web Designer, Artist </h4></div>
+        <a href="https://drive.google.com/file/d/0B9yKHdehbp-QOWI3Q0tNUDMwMU0/view?usp=sharing" class="w3-btn w3-light-grey w3-padding-large w3-margin-top" target="_new">
+            <i class="fa fa-download"></i> Download Resume
+        </a>
+    </header>
+    <!-- Container (About Section) -->
+    <div class="w3-container w3-padding-64 section-full" id="about">
+        <a name="about"></a>
+        <h2 class="w3-xlarge" style="letter-spacing: 4px">ABOUT</h2>
+        <div class="w3-row ">
+            <div class="w3-col m6 w3-center w3-padding-large ">
+                <br>
+                <img src="Images/somkalgrad.png" class="w3-round w3-image w3-opacity w3-hover-opacity-off " alt="Photo of Me " width="200 ">
+            </div>
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6 w3-hide-small w3-padding-large ">
+                <p class="w3-left-align ">I'm a web designer / developer based in Jersey City, NJ. I have a passion for web design and love to create for web and mobile devices.
+                    <br> I’m a recent Information Technology graduate, looking for a Software Designer/Developer position with a focus on web and mobile devices. My previous work experience involved website design updates and content administration using Joomla development. I also had an opportunity to attend conferences at United Nations and capture the updates and events.
+                </p>
+                <p>I also have a background in teaching Computer Science to school kids which has inspired me to dream in learning, teaching and applying technology for innovating via applications. My time outs include making colorful mixed media paintings to penning a black penned sketches of horses, from tweeting life defining quotes to watching Episodes of FRIENDS, from reading comic of Calvin and Hobbes to cooking new recipes, from traveling new places to shopping gifts for loved ones.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Work Section -->
+    <div class="w3-container w3-padding-64 section-full" id="work">
+        <a name="work"></a>
+        <h2 class="w3-xlarge" style="letter-spacing: 4px">WORK</h2>
+        <div class="w3-row-padding w3-center w3-margin-top">
+            <div class="w3-third">
+                <div class="w3-card-2 w3-light-grey w3-padding-top" style="min-height:500px">
+                    <h3 class="w3-large" style="letter-spacing: 4px">RightHand</h3>
+                    <br>
+                    <img src="Images/rightHand.png" alt="RightHand" style="width:90%">
+                    <p class="w3-padding-large"> An On-demand assistance service for senior citizens using MAMP (Macintosh, Apache, MySQL, and PHP) application server, HTML, CSS, jQuery, JsRender and Google Maps Location APIs.</p>
+                </div>
+            </div>
+            <div class="w3-third">
+                <div class="w3-card-2 w3-light-grey w3-padding-top" style="min-height:500px">
+                    <h3 class="w3-large" style="letter-spacing: 4px">Serene Spa</h3>
+                    <br>
+                    <img src="Images/sereneSpa.png" alt="RightHand" style="width:85%">
+                    <p class="w3-padding-large">An On-demand booking service using techniques as user journeys, customer experience maps, wireframes, Abobe Muse and Microsoft Visio.</p>
+                </div>
+            </div>
+            <div class="w3-third">
+                <div class="w3-card-2 w3-light-grey w3-padding-top" style="min-height:500px">
+                    <h3 class="w3-large" style="letter-spacing: 4px">SpotLess Cleaners</h3>
+                    <br>
+                    <img src="Images/spotLessCleaners.png" alt="RightHand" style="width:95%">
+                    <p class="w3-padding-large">SpotLess Cleaners website was designed and developed for a housecleaning company called Spotless Surfaces Cleaning Company. The process involved following more refined Agile development approach called Scrum.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Skills Section-->
+        <!-- Education Section-->
+        <!--
+        <div class="w3-row">
+            <h2 class="w3-xlarge" style="letter-spacing: 4px">Education and Certifications</h2>
+            <div class="w3-half w3-container">
+            </div>
+            <div class="w3-half w3-container">
+                <ul class="w3-ul w3-card-4 w3-light-grey" style="width:100%">
+                    <li class="w3-padding-16"><span>MS Information Technology (Nov 2016) </span>
+                        <br>
+                        <span>Awarded Outstanding Gradute <b>(GPA 4.0)</b> <br> Southern New Hampshire University</span></li>
+                    <li class="w3-padding-16"><span>Bachelor of Engineering in Information Science</span>
+                        <br>
+                        <span>Visvesvaraya Technological University</span></li>
+                    <li class="w3-padding-8"><span>Diploma in Computer Science</span>
+                        <br>
+                        <span>Bangalore University</span></li>
+                    <li class="w3-padding-16"><span>Certified in Web Application Architectures (Ruby on Rails) </span>
+                    </li>
+                    <li class="w3-padding-16"><span>Certified in programming C#, SQL using MS SQL Server, ADO.net using C# and Windows Forms</span>
+                    </li>
+                    <li class="w3-padding-16"><span>Certified in C and C++ programming languages </span></li>
+                </ul>
+            </div>
+        </div>
+        -->
+        <a name="art"></a>
+        <!-- Paintings Grid -->
+        <div class="w3-row-padding w3-padding-64" style="padding-bottom:128px" id="art">
+            <h2 class="w3-xlarge" style="letter-spacing: 4px">ART</h2>
+            <div class="w3-third">
+                <img src="Images/redness.jpg" style="width:100%" onclick="onClick(this)" alt="Redness">
+                <img src="Images/becauseOfYou.jpg" style="width:100%" onclick="onClick(this)" alt="Because of You">
+                <img src="Images/coverPage.jpg" style="width:100%" onclick="onClick(this)" alt="Cover Page">
+                <img src="Images/sunShine.jpg" style="width:100%" onclick="onClick(this)" alt="Sun Shine">
+                <img src="Images/dumboViews.jpg" style="width:100%" onclick="onClick(this)" alt="Dumbo Views">
+            </div>
+            <div class="w3-third">
+                <img src="Images/smokeOnFire.jpg" style="width:100%" onclick="onClick(this)" alt="Smoke on Fire">
+                <img src="Images/feathersInMyCap.jpg" style="width:100%" onclick="onClick(this)" alt="Feathers in my Cap">
+                <img src="Images/loveBleeding.jpg" style="width:100%" onclick="onClick(this)" alt="Love Bleeding">
+                <img src="Images/redBridge.jpg" style="width:100%" onclick="onClick(this)" alt="Red Bridge">
+                <img src="Images/hope.jpg" style="width:100%" onclick="onClick(this)" alt="Hope">
+                <img src="Images/loveLife.jpg" style="width:100%" onclick="onClick(this)" alt="Love Life">
+            </div>
+            <div class="w3-third">
+                <img src="Images/blueSkies.jpg" style="width:100%" onclick="onClick(this)" alt="Blue Skies">
+                <img src="Images/sriHariGanesh.jpg" style="width:100%" onclick="onClick(this)" alt="Colorful yet Divine">
+                <img src="Images/mexGanesha.jpg" style="width:100%" onclick="onClick(this)" alt="Divine">
+                <img src="Images/makingHeadlines.jpg" style="width:100%" onclick="onClick(this)" alt="Making HeadLines">
+                <img src="Images/philadelphiaFlowers.jpg" style="width:100%" onclick="onClick(this)" alt="Philadelphia Flowers">
+            </div>
+            <!-- Modal for full size images on click-->
+            <div id="modal01 " class="w3-modal w3-black w3-padding-0 " onclick="this.style.display='none' ">
+                <span class="w3-closebtn w3-text-white w3-opacity w3-hover-opacity-off w3-xxlarge
+        w3-container w3-display-topright">×</span>
+                <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64 ">
+                    <img id="img01 " class="w3-image modal-content">
+                    <p id="caption "></p>
+                </div>
+            </div>
+            <!-- End page content -->
+        </div>
+        <div class="clear"></div>
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-light-grey w3-center">
+            <div class="w3-xlarge ">
+                <a href="https://github.com/somkal" class="w3-hover-text-light-green "><i class="fa fa-github "></i></a>
+                <a href="https://www.linkedin.com/in/sowmya-raj-92a819103" class="w3-hover-text-indigo "><i class="fa fa-linkedin "></i></a>
+                <a href="https://www.twitter.com/create1self" class="w3-hover-text-light-blue "><i class="fa fa-twitter "></i></a>
+            </div>
+            <div class="w3-center ">Sowmya Kalyan | &copy; 2016 &nbsp; All rights reserved &nbsp;
+            </div>
+        </footer>
+        <script>
+        // Change style of navbar on scroll
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-navbar" + " w3-card-2" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01 ").src = element.src;
+            document.getElementById("modal01 ").style.display = "block ";
+            var captionText = document.getElementById("caption ");
+            captionText.innerHTML = element.alt;
+        }
+        </script>
+</body>
+
+</html>

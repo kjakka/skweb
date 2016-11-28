@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<title>ART</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<style>
+body,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Raleway", sans-serif
+}
+
+h1 {
+    letter-spacing: 6px
+}
+
+.w3-third img {
+    margin-bottom: -6px;
+    opacity: 0.8;
+    cursor: pointer
+}
+
+.w3-third img:hover {
+    opacity: 1
+}
+
+.w3-row-padding img {
+    margin-bottom: 12px
+}
+</style>
+
+<body class="w3-white w3-content" style="max-width:1600px">
+    <!-- Header -->
+    <header class="w3-panel w3-padding-128 w3-center ">
+        <h1>Art</h1>
+        <img src="Images/halfAvatar.png" class="w3-circle" style="width:10%" alt="halfAvatar">
+        <div class="w3-padding-10">
+            <h1 class="w3-xlarge">Self-taught Artist</h1></div>
+        <div class="w3-padding-32">
+            <div class="w3-btn-bar w3-border w3-show-inline-block">
+                <a href="#" class="w3-btn">ABOUT</a>
+                <a href="#" class="w3-btn w3-light-grey" onclick="myFunction()">ART</a>
+                <a href="#" class="w3-btn">WORK</a>
+            </div>
+        </div>
+    </header>
+    <!-- Push down content on small screens -->
+    <div class="w3-hide-large" style="margin-top:83px"></div>
+    <!-- Paintings Grid -->
+    <div class="w3-row-padding" id="myGrid" style="margin-bottom:128px">
+        <div class="w3-third">
+            <img src="Images/redness.jpg" style="width:100%" onclick="onClick(this)" alt="Redness">
+            <img src="Images/becauseOfYou.jpg" style="width:100%" onclick="onClick(this)" alt="Because of You">
+            <img src="Images/coverPage.jpg" style="width:100%" onclick="onClick(this)" alt="Cover Page">
+            <img src="Images/sunShine.jpg" style="width:100%" onclick="onClick(this)" alt="Sun Shine">
+            <img src="Images/dumboViews.jpg" style="width:100%" onclick="onClick(this)" alt="Dumbo Views">
+        </div>
+        <div class="w3-third">
+            <img src="Images/smokeOnFire.jpg" style="width:100%" onclick="onClick(this)" alt="Smoke on Fire">
+            <img src="Images/feathersInMyCap.jpg" style="width:100%" onclick="onClick(this)" alt="Feathers in my Cap">
+            <img src="Images/loveBleeding.jpg" style="width:100%" onclick="onClick(this)" alt="Love Bleeding">
+            <img src="Images/redBridge.jpg" style="width:100%" onclick="onClick(this)" alt="Red Bridge">
+            <img src="Images/hope.jpg" style="width:100%" onclick="onClick(this)" alt="Hope">
+            <img src="Images/loveLife.jpg" style="width:100%" onclick="onClick(this)" alt="Love Life">
+        </div>
+        <div class="w3-third">
+            <img src="Images/blueSkies.jpg" style="width:100%" onclick="onClick(this)" alt="Blue Skies">
+            <img src="Images/sriHariGanesh.jpg" style="width:100%" onclick="onClick(this)" alt="Colorful yet Divine">
+            <img src="Images/mexGanesha.jpg" style="width:100%" onclick="onClick(this)" alt="Divine">
+            <img src="Images/makingHeadlines.jpg" style="width:100%" onclick="onClick(this)" alt="Making HeadLines">
+            <img src="Images/philadelphiaFlowers.jpg" style="width:100%" onclick="onClick(this)" alt="Philadelphia Flowers">
+        </div>
+        <!-- Modal for full size images on click-->
+        <div id="modal01 " class="w3-modal w3-black w3-padding-0 " onclick="this.style.display='none' ">
+            <span class="w3-closebtn w3-text-white w3-opacity w3-hover-opacity-off w3-xxlarge
+ w3-container w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64 ">
+                <img id="img01 " class="w3-image ">
+                <p id="caption "></p>
+            </div>
+        </div>
+        <!-- End page content -->
+    </div>
+    <!-- Footer -->
+    <footer class="w3-white w3-padding-64 w3-center " id="about ">
+        <div class="w3-center ">Self-taught Artist | 'Creativity is the epitome of Creation which Constructs the incredible imaginings beyond' - Dedicated to Kalyan | &copy; 2016 &nbsp; All rights reserved &nbsp; </div>
+    </footer>
+    <script>
+    // Toggle grid padding
+    function myFunction() {
+        var x = document.getElementById("myGrid");
+        if (x.className === "w3-row") {
+            x.className = "w3-row-padding";
+        } else {
+            x.className = x.className.replace("w3-row-padding", "w3-row");
+        }
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01 ").src = element.src;
+        document.getElementById("modal01 ").style.display = "block ";
+        var captionText = document.getElementById("caption ");
+        captionText.innerHTML = element.alt;
+    }
+    </script>
+</body>
+
+</html>
