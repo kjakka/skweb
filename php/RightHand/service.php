@@ -10,7 +10,7 @@ define('DB_USER', getenv('MYSQL_USER'));
 define('DB_PASS', getenv('MYSQL_PASSWORD'));
 
 if(!DB_HOST){
-	$dbhost = 'localhost';
+	$dbhost = '127.0.0.1';
 	$dbuser = 'root';
 	$dbpass = 'root';
 	$dbname = 'righthand';	
